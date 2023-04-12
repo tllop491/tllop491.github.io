@@ -7,6 +7,7 @@ const tileSize = canvas.width / gridSize;
 let snake = [{x: 10, y: 10}];
 let food = {x: 5, y: 5};
 let snakeSpeed = {x: 0, y: 0};
+let score = 0;
 
 document.addEventListener('keydown', handleKeyPress);
 
@@ -39,6 +40,7 @@ function checkFoodCollision() {
   if (snake[0].x === food.x && snake[0].y === food.y) {
     generateFood();
     growSnake();
+    score++;
   }
 }
 
@@ -65,6 +67,7 @@ function growSnake() {
 function resetGame() {
   snake = [{x: 10, y: 10}];
   snakeSpeed = {x: 0, y: 0};
+  score = 0;
 }
 
 function draw() {
@@ -79,6 +82,11 @@ function draw() {
   // Draw food
   ctx.fillStyle = 'red';
   ctx.fillRect(food.x * tileSize, food.y * tileSize, tileSize, tileSize);
+
+  // Draw score
+  ctx.fillStyle = 'white';
+  ctx.font = '20px Arial';
+  ctx.fillText(`Score: ${score}`, 10, 30);
 }
 
 main();
