@@ -1,16 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snake Game</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timothy Lopez</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }<!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Timothy Lopez</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .circle {
+            border-radius: 50%;
+            position: absolute;
+            animation: rotate 10s linear infinite;
+            opacity: 0.1;
+        }
+        
+        .circle:nth-child(odd) {
+            border: 3px solid #00ff7f;
+        }
+        
+        .circle:nth-child(even) {
+            border: 3px solid #ff69b4;
+        }
+        
+        .circle:nth-child(1) {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .circle:nth-child(2) {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .circle:nth-child(3) {
+            width: 400px;
+            height: 400px;
+        }
+        
+        .circle:nth-child(4) {
+            width: 500px;
+            height: 500px;
+        }
+        
+        .circle:nth-child(5) {
+            width: 600px;
+            height: 600px;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .name {
+            font-size: 3rem;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .gas-sphere {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, rgba(255, 105, 180, 0.8), rgba(255, 50, 0, 0.5), transparent);
+            animation: pulse 2s infinite;
+            z-index: 5;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+        
+    </style>
 </head>
-<body>
-  <div id="gameContainer">
-    <canvas id="gameCanvas"></canvas>
-  </div>
-  <script src="script.js"></script>
-</body>
+    <body>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="gas-sphere"></div>
+        <h1 class="name">Timothy Lopez</h1>
+    </body>
 </html>
-
